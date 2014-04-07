@@ -16,29 +16,16 @@
         //    PRIMARY KEY(id),
         // name VARCHAR(30) )")
         // or die(mysql_error()); 
-    mysql_query("INSERT INTO events
-        (name) VALUES('UA vs Auburn') ")
-        or die(mysql_error());
+    //mysql_query("INSERT INTO events
+    //    (name) VALUES('UA vs Auburn') ")
+    //    or die(mysql_error());
 
-    mysql_query("INSERT INTO events
-        (name) VALUES('UA vs Arkansas') ")
-        or die(mysql_error());
-    
-    mysql_query("INSERT INTO events
-        (name) VALUES('UA vs South Carolina') ")
-        or die(mysql_error());
-    
-    mysql_query("INSERT INTO events
-        (name) VALUES('UA vs The USSR') ")
-        or die(mysql_error());
+    //$result = mysql_query("SELECT * FROM events")
+    //    or die(mysql_error());
+    //$row = mysql_fetch_array($result);
+    //echo "ID: ".$row['id'];
+    //echo "Name: ".$row['name'];
+    //echo "Placeholder"
 
-    $result = mysql_query("SELECT * FROM events")
-        or die(mysql_error());
-    $row = mysql_fetch_array($result);
-    $row2 = mysql_fetch_array($result);
-    echo "ID: ".$row['id'];
-    echo "Name: ".$row['name'];
-    echo "ID: ".$row2['id'];
-    echo "Name: ".$row2['name'];
 
 ?>
