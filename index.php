@@ -10,5 +10,20 @@
 
     mysql_select_db($db);
 
-    echo "ylalj";
+    //Create tables
+        mysql_query("CREATE TABLE events(
+            id INT NOT NULL AUTO_INCREMENT, 
+            PRIMARY KEY(id),
+         name VARCHAR(30) )")
+         or die(mysql_error()); 
+    mysql_query("INSERT INTO events
+        (name) VALUES('UA vs OleMiss') ")
+        or die(mysql_error());
+
+    $result = mysql_query("SELECT * FROM events")
+        or die(mysql_error());
+    $row = mysql_fetch_array($result);
+    echo "ID: ".$row['id'];
+    echo "Name: ".$row['name'];
+
 ?>
