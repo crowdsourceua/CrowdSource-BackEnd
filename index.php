@@ -9,4 +9,6 @@
     mysql_connect($server, $username, $password);
 
     mysql_select_db($db);
+
+    echo "ylalj";
 ?>
