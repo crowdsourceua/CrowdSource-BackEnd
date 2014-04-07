@@ -9,7 +9,7 @@
     
 
     //return a JSON object with all the rows from events
-    $sth = mysql_query("SELECT * FROM events");
+    $sth = mysql_query("SELECT name FROM events");
     $rows = array();
     while($r = mysql_fetch_assoc($sth)) {
         $rows[] = $r;
