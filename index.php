@@ -27,7 +27,7 @@
     
     
     header('Content-Type: application/json');
-    echo json_encode($rows);
+    echo json_encode($sth);
     //
     mysql_close($conn);
 ?>
