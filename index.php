@@ -20,9 +20,14 @@
         //print_r($row);
         $eventData[] = $row;
     }
-    //header('Content-Type: application/json');
-    //echo json_encode($result);
+    $userData = array();
+    $result2 = mysql_query("SELECT * FROM users")
+        or die(mysql_error());
+    while($row2 = mysql_fetch_assoc($result)){
+        $userData[] = $row;
+    }
     echo json_encode($eventData);
+    echo json_encode($userData);
     //
     //mysql_close($conn);
 ?>
