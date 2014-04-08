@@ -4,26 +4,14 @@
     $username = $url["user"];
     $password = $url["pass"];
     $db = substr($url["path"],1);
+    echo "BLAH1";
     $conn = mysql_connect($server, $username, $password);
     if(!$conn)
     {
         die('Could not connect: ' . mysql_error());
     }
     mysql_select_db($db);
-    
 
-    //return a JSON object with all the rows from events
-    //$sth = mysql_query("SELECT * FROM Event");
-    //$rows = array();
-    //while($r = mysql_fetch_assoc($sth)) {
-    //    $rows[] = $r;
-    //}
-    $sql = "SELECT * FROM Event"
-    $retval = mysql_query($sql, $conn);
-    if(! $retval )
-    {
-       die('Error: ' . mysql_error());
-    }
     $eventData = array();
     $result = mysql_query("SELECT * FROM event")
         or die(mysql_error());
