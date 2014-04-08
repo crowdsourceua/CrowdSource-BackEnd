@@ -4,7 +4,6 @@
     $username = $url["user"];
     $password = $url["pass"];
     $db = substr($url["path"],1);
-    echo "BLAH1";
     $conn = mysql_connect($server, $username, $password);
     if(!$conn)
     {
@@ -17,11 +16,10 @@
         or die(mysql_error());
     //$row = mysql_fetch_array($result);
     while($row = mysql_fetch_assoc($result)){
-        echo "Got row: \n";
-        print_r($row);
+        //echo "Got row: \n";
+        //print_r($row);
         $eventData[] = $row;
     }
-    echo "BLAH"; 
     //header('Content-Type: application/json');
     //echo json_encode($result);
     echo json_encode($eventData);
