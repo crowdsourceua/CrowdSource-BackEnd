@@ -24,10 +24,19 @@
     {
        die('Error: ' . mysql_error());
     }
+    $eventData = array();
+    $result = mysql_query("SELECT * FROM event")
+        or die(mysql_error());
+    //$row = mysql_fetch_array($result);
+    while($row = mysql_fetch_assoc($result)){
+        echo "Got row: \n";
+        print_r($row);
+        $eventData[] = $row;
+    }
     
-    
-    header('Content-Type: application/json');
-    echo json_encode($retval);
+    //header('Content-Type: application/json');
+    //echo json_encode($result);
+    echo json_encode($eventData);
     //
-    mysql_close($conn);
+    //mysql_close($conn);
 ?>
