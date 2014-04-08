@@ -18,15 +18,16 @@
     //while($r = mysql_fetch_assoc($sth)) {
     //    $rows[] = $r;
     //}
-    $sql = "DROP TABLE events";
+    $sql = "SELECT * FROM Event"
     $retval = mysql_query($sql, $conn);
     if(! $retval )
     {
-        die('Could not delete table: ' . mysql_error());
+        die('Error: ' . mysql_error());
     }
-    //header('Content-Type: application/json');
-    //echo json_encode($rows);
-    echo "Table deleted successfully";
+    
+    
+    header('Content-Type: application/json');
+    echo json_encode($rows);
+    //
     mysql_close($conn);
-
 ?>
