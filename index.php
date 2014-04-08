@@ -13,17 +13,17 @@
     
 
     //return a JSON object with all the rows from events
-    //$sth = mysql_query("SELECT name FROM events");
-    //$rows = array();
-    //while($r = mysql_fetch_assoc($sth)) {
-    //    $rows[] = $r;
-    //}
-    $sql = "SELECT * FROM Event"
-    $retval = mysql_query($sql, $conn);
-    if(! $retval )
-    {
-        die('Error: ' . mysql_error());
+    $sth = mysql_query("SELECT name FROM events");
+    $rows = array();
+    while($r = mysql_fetch_assoc($sth)) {
+        $rows[] = $r;
     }
+    //$sql = "SELECT * FROM Event"
+    //$retval = mysql_query($sql, $conn);
+    //if(! $retval )
+    //{
+     //   die('Error: ' . mysql_error());
+    //}
     
     
     header('Content-Type: application/json');
