@@ -33,7 +33,7 @@
         print_r($row);
         $eventData[] = $row;
     }
-    
+    echo "BLAH"; 
     //header('Content-Type: application/json');
     //echo json_encode($result);
     echo json_encode($eventData);
