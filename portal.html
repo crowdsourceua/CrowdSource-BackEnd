@@ -108,6 +108,52 @@
           $('#addEventBtn').on('click', function() {
             $('#formDialog').dialog('open');
           });
+          $('.form-signin').on('submit', function() {				
+            var eventName = $('#eventName-box').val();
+            var opponent = $('#opponent-box').val();
+            var eventLocation = $('#location-box').val();
+            var eventVenue = $('#eventName-box').val();
+            var eventTime = $('#eventTime-box').val();
+            var eventType = $('#eventType-box').val();
+            var description = $('#description-box').val();
+            var eventDate = $('#date-box').val();
+            var myUrl = "http://crowdsourceua.herokuapp.com/addEvent.php?eventName=" + eventName + 
+            "&opponent=" + opponent + 
+            "&eventLocation=" + eventLocation +;
+            "&eventVenue=" + eventVenue +;
+            "&eventTime=" + eventTime +;
+            "&eventType=" + eventType +;
+            "&description=" + description +;
+            "&eventDate=" + eventDate + "";
+
+            $.ajax({
+              url: myUrl,
+              success: function(data) {
+                if (data == '1') {
+                  window.location.replace("./portal.html");
+                }
+                if (data == '0') {
+                  window.location.replace("./signin.html");
+                  $('#formDialog input').val('');
+                  $('#formDialog').dialog('close');
+                  Messenger().post({
+                    message: 'Entries rejected. Please try again.',
+                    type: 'error',
+                    showCloseButton: true
+                  });
+                }
+              },
+              error: function(xhr, textStatus, errorThrown) {
+                Messenger().post({
+                  message: 'There was a network error.  Please try again.',
+                  type: 'error',
+                  showCloseButton: true
+                });
+              }
+            });
+
+            return false;
+          });
       });
     </script>
   </body>
