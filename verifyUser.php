@@ -27,5 +27,5 @@
         $match = false;
     }
     
-    echo $match ? 'true' : 'false';
+    echo json_encode($match);
 ?>
