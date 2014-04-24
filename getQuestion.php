@@ -18,5 +18,6 @@
     //Return 1 row as result for getQuestion()
     $retval = mysql_query($query) or trigger_error(mysql_error()." in ".$query);
     //echo json_encode($retval); 
-    echo $retval
+    //echo $retval
+    var_dump($retval);
 ?>
