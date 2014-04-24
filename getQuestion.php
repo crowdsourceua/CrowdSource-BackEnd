@@ -8,7 +8,7 @@
     if(!$conn){ die('Could not connect: ' . mysql_error()); }
     mysql_select_db($db);
 
-    $query = "SELECT * FROM Questions WHERE '$_GET[eventID]' = eventID Limit 1";
+    $query = "SELECT * FROM Questions WHERE '$_GET[eventID]' = eventID";
     //$query = "SELECT * FROM Questions WHERE 1 = eventID"; 
     
 
