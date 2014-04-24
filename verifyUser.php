@@ -22,11 +22,11 @@
 
     if($num != 0){
         //$match = { status: true }; 
-        echo "<p>big ass long string</p>";
+        echo "<p>big ass long string true</p>";
     }
     else{
         //$match = { status: false };
-        echo "<p>big ass long string</p>";
+        echo "<p>big ass long string false</p>";
     }
     
     //echo json_encode($match);
