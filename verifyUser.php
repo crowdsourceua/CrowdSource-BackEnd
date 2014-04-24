@@ -22,11 +22,11 @@
 
     if($num != 0){
         //$match = { status: true }; 
-        echo true;
+        echo 1;
     }
     else{
         //$match = { status: false };
-        echo false;
+        echo 0;
     }
     
     //echo json_encode($match);
