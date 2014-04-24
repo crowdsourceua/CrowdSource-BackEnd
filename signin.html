@@ -1,82 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1265.19">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #999999}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #000080}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #008080}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #dd1144}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #333333; min-height: 14.0px}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #333333}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Consolas; color: #999988}
-    span.s1 {color: #333333}
-    span.s2 {color: #008080}
-    span.s3 {color: #dd1144}
-    span.s4 {color: #000080}
-    span.Apple-tab-span {white-space:pre}
-  </style>
-</head>
-<body>
-<p class="p1"><b>&lt;!DOCTYPE html&gt;</b></p>
-<p class="p2">&lt;html<span class="s1"> </span><span class="s2">lang=</span><span class="s3">"en"</span>&gt;</p>
-<p class="p2"><span class="s1">  </span>&lt;head&gt;</p>
-<p class="p3"><span class="s1">    </span><span class="s4">&lt;meta</span><span class="s1"> </span>charset=<span class="s3">"utf-8"</span><span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;meta</span><span class="s1"> </span><span class="s2">http-equiv=</span>"X-UA-Compatible"<span class="s1"> </span><span class="s2">content=</span>"IE=edge"<span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;meta</span><span class="s1"> </span><span class="s2">name=</span>"viewport"<span class="s1"> </span><span class="s2">content=</span>"width=device-width, initial-scale=1"<span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;meta</span><span class="s1"> </span><span class="s2">name=</span>"description"<span class="s1"> </span><span class="s2">content=</span>""<span class="s4">&gt;</span></p>
-<p class="p3"><span class="s1">    </span><span class="s4">&lt;meta</span><span class="s1"> </span>name=<span class="s3">"author"</span><span class="s1"> </span>content=<span class="s3">""</span><span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;link</span><span class="s1"> </span><span class="s2">rel=</span>"shortcut icon"<span class="s1"> </span><span class="s2">href=</span>"../../assets/ico/favicon.ico"<span class="s4">&gt;</span></p>
-<p class="p5"><br></p>
-<p class="p6">    <span class="s4">&lt;title&gt;</span>CrowdSource SignIn<span class="s4">&lt;/title&gt;</span></p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- Bootstrap core CSS --&gt;</i></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;link</span><span class="s1"> </span><span class="s2">href=</span>"./css/bootstrap.min.css"<span class="s1"> </span><span class="s2">rel=</span>"stylesheet"<span class="s4">&gt;</span></p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- Custom styles for this template --&gt;</i></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;link</span><span class="s1"> </span><span class="s2">href=</span>"./css/signin.css"<span class="s1"> </span><span class="s2">rel=</span>"stylesheet"<span class="s4">&gt;</span></p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- Just for debugging purposes. Don't actually copy this line! --&gt;</i></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!--[if lt IE 9]&gt;&lt;script src="../../assets/js/ie8-responsive-file-warning.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;</i></p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</i></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!--[if lt IE 9]&gt;</i></p>
-<p class="p7"><i><span class="Apple-converted-space">      </span>&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;</i></p>
-<p class="p7"><i><span class="Apple-converted-space">      </span>&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</i></p>
-<p class="p7"><i><span class="Apple-converted-space">    </span>&lt;![endif]--&gt;</i></p>
-<p class="p2"><span class="s1">  </span>&lt;/head&gt;</p>
-<p class="p5"><br></p>
-<p class="p2"><span class="s1">  </span>&lt;body&gt;</p>
-<p class="p5"><br></p>
-<p class="p4"><span class="s1">    </span><span class="s4">&lt;div</span><span class="s1"> </span><span class="s2">class=</span>"container"<span class="s4">&gt;</span></p>
-<p class="p5"><br></p>
-<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">&lt;a</span><span class="s1"> </span><span class="s2">href=</span>"./index.html"<span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span></span><span class="s4">&lt;button</span><span class="s1"> </span><span class="s2">type=</span>"button"<span class="s1"> </span><span class="s2">class=</span>"btn btn-link btn-sm"<span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><span class="s4">&lt;span</span><span class="s1"> </span><span class="s2">class=</span>"glyphicon glyphicon-chevron-left"<span class="s4">&gt;&lt;/span&gt;</span><span class="s1"> Return</span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  </span></span>&lt;/button&gt;</p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;/a&gt;</p>
-<p class="p5"><br></p>
-<p class="p4"><span class="s1">      </span><span class="s4">&lt;form</span><span class="s1"> </span><span class="s2">class=</span>"form-signin"<span class="s1"> </span><span class="s2">role=</span>"form"<span class="s4">&gt;</span></p>
-<p class="p6">        <span class="s4">&lt;h2</span> <span class="s2">class=</span><span class="s3">"form-signin-heading"</span><span class="s4">&gt;</span>Please sign in<span class="s4">&lt;/h2&gt;</span></p>
-<p class="p3"><span class="s1">        </span><span class="s4">&lt;input</span><span class="s1"> </span>type=<span class="s3">"email"</span><span class="s1"> </span>class=<span class="s3">"form-control"</span><span class="s1"> </span>placeholder=<span class="s3">"Email address"</span><span class="s1"> </span>required<span class="s1"> </span>autofocus<span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">        </span><span class="s4">&lt;input</span><span class="s1"> </span><span class="s2">type=</span>"password"<span class="s1"> </span><span class="s2">class=</span>"form-control"<span class="s1"> </span><span class="s2">placeholder=</span>"Password"<span class="s1"> </span><span class="s2">required</span><span class="s4">&gt;</span></p>
-<p class="p4"><span class="s1">        </span><span class="s4">&lt;label</span><span class="s1"> </span><span class="s2">class=</span>"checkbox"<span class="s4">&gt;</span></p>
-<p class="p6">          <span class="s4">&lt;input</span> <span class="s2">type=</span><span class="s3">"checkbox"</span> <span class="s2">value=</span><span class="s3">"remember-me"</span><span class="s4">&gt;</span> Remember me</p>
-<p class="p6">        <span class="s4">&lt;/label&gt;</span></p>
-<p class="p4"><span class="s1">        </span><span class="s4">&lt;button</span><span class="s1"> </span><span class="s2">class=</span>"btn btn-lg btn-primary btn-block"<span class="s1"> </span><span class="s2">type=</span>"submit"<span class="s4">&gt;</span><span class="s1">Sign in</span><span class="s4">&lt;/button&gt;</span></p>
-<p class="p2"><span class="s1">      </span>&lt;/form&gt;</p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><span class="s4">&lt;/div&gt;</span><span class="s1"> </span><i>&lt;!-- /container --&gt;</i></p>
-<p class="p5"><br></p>
-<p class="p5"><br></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- Bootstrap core JavaScript</i></p>
-<p class="p7"><i><span class="Apple-converted-space">    </span>================================================== --&gt;</i></p>
-<p class="p7"><span class="s1">    </span><i>&lt;!-- Placed at the end of the document so the pages load faster --&gt;</i></p>
-<p class="p2"><span class="s1">  </span>&lt;/body&gt;</p>
-<p class="p2">&lt;/html&gt;</p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>CrowdSource SignIn</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/signin.css" rel="stylesheet">
+
+    <link href="./messenger/css/messenger.css" rel="stylesheet">
+    <link href="./messenger/css/messenger-spinner.css" rel="stylesheet">
+    <link href="./messenger/css/messenger-theme-future.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+		<a href="http://crowdsourceua.github.io">
+		  <button type="button" class="btn btn-link btn-sm">
+			<span class="glyphicon glyphicon-chevron-left"></span> Return
+		  </button>
+		</a>
+	
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input id='email-box' type="email" class="form-control" placeholder="Email address" required autofocus>
+        <input id='pwd-box' type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+    <div id='storage'></div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <script src="./messenger/js/messenger.min.js"></script>
+    <script src="./messenger/js/messenger-theme-future.js"></script>
+	
+	<!-- Javascript for checking validity of username and password using AJAX call -->
+	<script type='text/javascript'>
+		$(document).ready(function() {
+			Messenger.options = {
+				extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+				theme: 'future'
+			};
+
+			$('.form-signin').on('submit', function() {				
+				var eml = $('#email-box').val();
+				var pwd = $('#pwd-box').val();
+				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+
+        $.ajax({
+          url: myUrl,
+					success: function(data) {
+						if (data === '1') {
+							window.location.replace("./portal.html");
+						}
+						if (data == '0') {
+							window.location.replace("./signin.html");
+              $('#pwd-box').val('');
+              Messenger().post({
+                message: 'Invalid credentials.  Please try again.',
+                type: 'error',
+                showCloseButton: true
+              });
+						}
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            Messenger().post({
+              message: 'There was a network error.  Please try again.',
+              type: 'error',
+              showCloseButton: true
+            });
+          }
+				});
+
+        return false;
+			});
+		});
+	</script>
+  </body>
 </html>
