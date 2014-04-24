@@ -62,6 +62,11 @@
 	<!-- Javascript for checking validity of username and password using AJAX call -->
 	<script type='text/javascript'>
 		$(document).ready(function() {
+			Messenger.options = {
+				extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+				theme: 'future'
+			};
+
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
@@ -75,10 +80,20 @@
 						}
 						if (data == '0') {
 							window.location.replace("./signin.html");
+              $('#pwd-box').val('');
+              Messenger().post({
+                message: 'Invalid credentials.  Please try again.',
+                type: 'error',
+                showCloseButton: true
+              });
 						}
           },
           error: function(xhr, textStatus, errorThrown) {
-            alert("Failed: " + textStatus + " : " + errorThrown);
+            Messenger().post({
+              message: 'There was a network error.  Please try again.',
+              type: 'error',
+              showCloseButton: true
+            });
           }
 				});
 
