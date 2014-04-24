@@ -8,8 +8,8 @@
     if(!$conn){ die('Could not connect: ' . mysql_error()); }
     mysql_select_db($db);
 
-    //$query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID Limit 1";
-    $query = "SELECT * FROM Questions WHERE 1 = eventID"; 
+    $query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID Limit 1";
+    //$query = "SELECT * FROM Questions WHERE 1 = eventID"; 
     
     //$query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID AND alive > 0 AND '$_GET[questionType]' = questionType Limit 1";
 
@@ -31,6 +31,7 @@
     //echo json_encode($retval);
     $row = mysql_fetch_row($retval);
     //echo $row[0];
+    
     //echo json_encode($row)
     echo json_encode($retval);
 
