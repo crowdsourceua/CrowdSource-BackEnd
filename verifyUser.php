@@ -9,7 +9,7 @@
     mysql_select_db($db);
 
     
-    if((!$_POST["eml"]) || (!$_POST["pass"]))
+    if((!$_POST["email"]) || (!$_POST["pass"]))
     {
         //redirect to login page
         header("Location: signin.html");
