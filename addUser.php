@@ -9,19 +9,22 @@
     mysql_select_db($db);
 
     
-    if((!$_POST["eml"]) || (!$_POST["pass"]))
-    {
+    // if((!$_POST["eml"]) || (!$_POST["pass"]))
+    // {
         //redirect to login page
-        header("Location: signin.html");
-        exit;
-    }
+    //    header("Location: signin.html");
+    //    exit;
+    //}
     else{
-        $email = $_POST["eml"];
+        $email = $_POST["email"];
         $email = mysql_real_escape_string($email);
         $pass = $_POST["pass"];
         $pass = mysql_real_escape_string($pass);
 
-        $query = "INSERT INTO Logins (email, pass) VALUES ('$email', '$pass')";
+        $query = "INSERT INTO Logins (email, pass) VALUES ('$_GET[email]','$_GET[pass]'";
+
+
+        $query = "INSERT INTO Logins (email, pass) VALUES (
         mysql_query($query) or trigger_error(mysql_error()." in ".$query);
         
     }
