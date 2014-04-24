@@ -23,7 +23,6 @@
     while($x = mysql_fetch_assoc($res)){
         $fields[] = $x['Field']
     } 
-    echo $fields
-
+    json_encode($fields);
 
 ?>
