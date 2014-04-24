@@ -16,6 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="./css/dashboard.css" rel="stylesheet">
 
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -49,7 +51,7 @@
           <div id="event-marker"></div>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">              
-              <button type="button" class="btn btn-lg btn-link">
+              <button id="addEventBtn" type="button" class="btn btn-lg btn-link">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
               <h4>Add New Event</h4>
@@ -74,6 +76,20 @@
         </div>
       </div>
     </div>
+    <div id='formDialog' title='Add Event'>
+      <form class="form-addEvent" role="form">
+        <h2 class="form-addEvent-heading">Add Event</h2>
+        <input id='eventName-box' type="text" class="form-control" placeholder="Event Name" required autofocus>
+        <input id='opponent-box' type="text" class="form-control" placeholder="Opponent" required>
+        <input id='location-box' type="text" class="form-control" placeholder="Location" required>
+        <input id='eventVenue-box' type="text" class="form-control" placeholder="Event Venue" required>
+        <input id='eventTime-box' type="text" class="form-control" placeholder="Event Time" required>
+        <input id='eventType-box' type="text" class="form-control" placeholder="Event Type" required>
+        <input id='description-box' type="text" class="form-control" placeholder="Description" required>
+        <input id='date-box' type="text" class="form-control" placeholder="Date" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -81,5 +97,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
+  	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#formDialog').dialog({
+            modal: true,
+            autoOpen: false
+          });
+          $('#addEventBtn').on('click', function() {
+            $('#formDialog').dialog('open');
+          });
+      });
+    </script>
   </body>
 </html>
