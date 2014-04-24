@@ -16,7 +16,7 @@
     //    exit;
     //}
 
-    $sql = "SELECT * FROM Logins WHERE email = '$_POST[email]' AND pass = '$_POST[pass]'";
+    $sql = "SELECT * FROM Logins WHERE email = '$_GET[email]' AND pass = '$_GET[pass]'";
     $result = mysql_query($sql, $conn) or die(mysql_error());
     $num = mysql_num_rows($result);
 
