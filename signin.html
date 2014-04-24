@@ -65,12 +65,12 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
-				var myUrl = "verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
         $.ajax({
           url: myUrl,
 					success: function(data) {
-						if (data === 'big ass long string') {
+						if (data === '1') {
 							window.location.replace("./portal.html");
 						}
 						if (data == '0') {
