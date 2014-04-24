@@ -80,6 +80,7 @@
           url: myUrl,
 					success: function(data) {
 						if (data == '1') {
+              sessionStorage.setItem('user', eml);
 							window.location.replace("./portal.html");
 						}
 						if (data == '0') {

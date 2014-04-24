@@ -119,6 +119,7 @@
             var eventType = $('#eventType-box').val();
             var description = $('#description-box').val();
             var eventDate = $('#date-box').val();
+            var user = sessionStorage.getItem('user');
             var myUrl = "http://crowdsourceua.herokuapp.com/addEvent.php?eventName=" + eventName + 
             "&opponent=" + opponent + 
             "&eventLocation=" + eventLocation +
@@ -126,7 +127,8 @@
             "&eventTime=" + eventTime +
             "&eventType=" + eventType +
             "&description=" + description +
-            "&eventDate=" + eventDate + "";
+            "&eventDate=" + eventDate + 
+            "&user=" + user + "";
 
             $.ajax({
               url: myUrl,

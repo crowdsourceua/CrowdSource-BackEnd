@@ -9,7 +9,7 @@
     mysql_select_db($db);
 
     
-    $query = "INSERT INTO event (eventName, opponent, location, eventVenue, eventTime, eventType, description, date) VALUES ('$_GET[eventName]', '$_GET[opponent]', '$_GET[eventLocation]', '$_GET[eventVenue]', '$_GET[eventTime]', '$_GET[eventType]', '$_GET[description]', '$_GET[eventDate]')";
+    $query = "INSERT INTO event (eventName, opponent, location, eventVenue, eventTime, eventType, description, date, user) VALUES ('$_GET[eventName]', '$_GET[opponent]', '$_GET[eventLocation]', '$_GET[eventVenue]', '$_GET[eventTime]', '$_GET[eventType]', '$_GET[description]', '$_GET[eventDate]', '$_GET[user]')";
     
     mysql_query($query) or trigger_error(mysql_error()." in ".$query);
 
