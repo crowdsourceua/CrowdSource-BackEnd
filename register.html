@@ -44,8 +44,9 @@
         <h2 class="form-signin-heading">Please sign in</h2>
         <input id='email-box' type="email" class="form-control" placeholder="Email address" required autofocus>
         <input id='pwd-box' type="password" class="form-control" placeholder="Password" required>
-        <a href="./register.html">
-          <button type="button" class="btn btn-sm btn-link">Register</button>
+        <input id='pwd-confirm-box' type="password" class="form-control" placeholder="Confirm Password" required>
+        <a href="./sign.html">
+          <button type="button" class="btn btn-sm btn-link">Sign In</button>
         </a>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
@@ -74,7 +75,17 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
-				var myUrl = "http://crowdsourceua.herokuapp.com/verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+        if (pwd != $('#pwd-confirm-box').val()) {
+          $('#pwd-box').val('');
+          $('#pwd-confirm-box').val('');
+          Messenger().post({
+            message: 'Your passwords do not match.  Please try again.',
+            type: 'error',
+            showCloseButton: true
+          });
+          return false;
+        }
+				var myUrl = "http://crowdsourceua.herokuapp.com/addUser.php?email=" + eml + "&pass=" + pwd + "";
 
         $.ajax({
           url: myUrl,
@@ -83,13 +94,15 @@
 							window.location.replace("./portal.html");
 						}
 						if (data == '0') {
-							window.location.replace("./signin.html");
+              $('#email-box').val('');
               $('#pwd-box').val('');
+              $('#pwd-confirm-box').val('');
               Messenger().post({
-                message: 'Invalid credentials.  Please try again.',
+                message: 'User already exists.  Please try again.',
                 type: 'error',
                 showCloseButton: true
               });
+              $('#email-box').focus();
 						}
           },
           error: function(xhr, textStatus, errorThrown) {

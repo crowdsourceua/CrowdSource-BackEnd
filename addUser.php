@@ -9,8 +9,18 @@
     mysql_select_db($db);
 
     
-    $query = "INSERT INTO Logins (email, pass) VALUES ('$_GET[email]','$_GET[pass]')";
-    mysql_query($query) or trigger_error(mysql_error()." in ".$query);
     
+    $sql = "SELECT * FROM Logins WHERE email = '$_GET[email]' AND pass = '$_GET[pass]'";
+    $result = mysql_query($sql, $conn) or die(mysql_error());
+    $num = mysql_num_rows($result);
+
+    if($num == 0){
+        $query = "INSERT INTO Logins (email, pass) VALUES ('$_GET[email]','$_GET[pass]')";
+        mysql_query($query) or trigger_error(mysql_error()." in ".$query);
+        echo "1";
+    }
+    else{
+        echo "0";
+    }
 
 ?>
