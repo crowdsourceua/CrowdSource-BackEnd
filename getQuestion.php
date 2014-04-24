@@ -16,8 +16,14 @@
     //mysql_query($sql) or trigger_error(mysql_error()." in ".$sql);
 
     //Return 1 row as result for getQuestion()
-    $retval = mysql_query($query) or trigger_error(mysql_error()." in ".$query);
+    $res = mysql_query($query) or trigger_error(mysql_error()." in ".$query);
     //echo json_encode($retval); 
     //echo $retval
-    var_dump($retval);
+    $fields = array();
+    while($x = mysql_fetch_assoc($res)){
+        $fields[] = $x['Field']
+    } 
+    echo $fields
+
+
 ?>
