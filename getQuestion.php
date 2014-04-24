@@ -8,7 +8,7 @@
     if(!$conn){ die('Could not connect: ' . mysql_error()); }
     mysql_select_db($db);
 
-    $query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID AND alive > 0 AND '$_GET[questionType]' = questionType";
+    $query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID AND alive > 0 Limit 1";
     //$query = "SELECT question, choiceA, choiceB, choiceC, choiceD, correctAnswer FROM Questions WHERE '$_GET[eventID]' = eventID AND alive > 0 AND '$_GET[questionType]' = questionType Limit 1";
 
     //"Kill" question to prevent it being used again 
