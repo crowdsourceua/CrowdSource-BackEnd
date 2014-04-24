@@ -21,10 +21,10 @@
     $num = mysql_num_rows($result);
 
     if($num != 0){
-        $match = true; 
+        $match = "{ status: true }"; 
     }
     else{
-        $match = false;
+        $match = "{ status: false }";
     }
     
     echo json_encode($match);
