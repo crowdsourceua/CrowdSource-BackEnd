@@ -31,7 +31,8 @@
     //echo json_encode($retval);
     $row = mysql_fetch_row($retval);
     //echo $row[0];
-    echo json_encode($row)
+    //echo json_encode($row)
+    echo json_encode($retval);
 
 
 ?>
