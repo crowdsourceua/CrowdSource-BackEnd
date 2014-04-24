@@ -12,6 +12,11 @@
     $query = "INSERT INTO event (eventName, opponent, location, eventVenue, eventTime, eventType, description, date) VALUES ('$_GET[eventName]', '$_GET[opponent]', '$_GET[location]', '$_GET[eventVenue]', '$_GET[eventTime]', '$_GET[eventType]', '$_GET[description]', '$_GET[date]')";
     
     mysql_query($query) or trigger_error(mysql_error()." in ".$query);
-    
 
+    if (mysql_error() == "") {
+        echo "1"
+    }
+    else {
+        echo "0"
+    }
 ?>
