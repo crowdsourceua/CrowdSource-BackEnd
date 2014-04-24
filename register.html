@@ -94,9 +94,9 @@
 							window.location.replace("./portal.html");
 						}
 						if (data == '0') {
-							window.location.replace("./signin.html");
               $('#email-box').val('');
               $('#pwd-box').val('');
+              $('#pwd-confirm-box').val('');
               Messenger().post({
                 message: 'User already exists.  Please try again.',
                 type: 'error',
