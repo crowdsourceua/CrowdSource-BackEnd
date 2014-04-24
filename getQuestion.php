@@ -26,7 +26,9 @@
     //    $fields[] = $x['Field']
     //} 
     //json_encode($fields);
-    echo $query;
-    echo $retval;
-    echo json_encode($retval);
+    //echo $query;
+    //echo $retval;
+    //echo json_encode($retval);
+    $row = mysql_fetch_row($retval);
+    echo $row;
 ?>
