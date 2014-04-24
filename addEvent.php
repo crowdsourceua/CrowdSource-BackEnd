@@ -13,10 +13,12 @@
     
     mysql_query($query) or trigger_error(mysql_error()." in ".$query);
 
-    if (mysql_error() == "") {
-        echo "1"
-    }
-    else {
-        echo "0"
-    }
+    //if(mysql
+
+    //if (mysql_error() == "") {
+    //    echo "1"
+    //}
+    //else {
+    //    echo "0"
+    //}
 ?>
