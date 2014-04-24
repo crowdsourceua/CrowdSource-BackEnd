@@ -20,6 +20,7 @@
     $result = mysql_query($sql, $conn) or die(mysql_error());
     $num = mysql_num_rows($result);
 
+
     if($num != 0){
         //$match = { status: true }; 
         echo "<p>big ass long string true</p>";
