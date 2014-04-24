@@ -9,7 +9,8 @@
     mysql_select_db($db);
 
     
-    $query = "INSERT INTO Logins (email, pass) VALUES ('$_GET[email]','$_GET[pass]')";
+    $query = "INSERT INTO event (eventID, question, questionType, choiceA, choiceB, choiceC, choiceD, correctAnswer) VALUES ('$_GET[eventID]', '$_GET[question]', '$_GET[questionType]', '$_GET[choiceA]', '$_GET[choiceB]', '$_GET[choiceC]', '$_GET[choiceD]', '$_GET[correctAnswer]')";
+    
     mysql_query($query) or trigger_error(mysql_error()." in ".$query);
     
 

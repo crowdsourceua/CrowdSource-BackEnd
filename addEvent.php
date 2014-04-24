@@ -8,19 +8,10 @@
     if(!$conn){ die('Could not connect: ' . mysql_error()); }
     mysql_select_db($db);
 
-
-
-
-    $sql = "SELECT * FROM Logins WHERE email = '$_GET[email]' AND pass = '$_GET[pass]'";
-    $result = mysql_query($sql, $conn) or die(mysql_error());
-    $num = mysql_num_rows($result);
-
-    if($num != 0){
-        $match = "{ status: true }"; 
-    }
-    else{
-        $match = "{ status: false }";
-    }
     
-    echo json_encode($match);
+    $query = "INSERT INTO event (eventName, opponent, location, eventVenue, eventTime, eventType, description, date) VALUES ('$_GET[eventName]', '$_GET[opponent]', '$_GET[location]', '$_GET[eventVenue]', '$_GET[eventTime]', '$_GET[eventType]', '$_GET[description]', '$_GET[date]')";
+    
+    mysql_query($query) or trigger_error(mysql_error()." in ".$query);
+    
+
 ?>
