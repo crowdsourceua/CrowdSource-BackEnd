@@ -65,7 +65,7 @@
 			$('.form-signin').on('submit', function() {				
 				var eml = $('#email-box').val();
 				var pwd = $('#pwd-box').val();
-				var myUrl = "./verifyUser.php?email=" + eml + "&pass=" + pwd + "";
+				var myUrl = "verifyUser.php?email=" + eml + "&pass=" + pwd + "";
 
         $.ajax({
           url: myUrl,
