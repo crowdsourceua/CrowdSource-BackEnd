@@ -33,7 +33,7 @@
     //echo $row[0];
     
     //echo json_encode($row)
-    echo json_encode($retval);
+    echo json_encode($row);
 
 
 ?>
