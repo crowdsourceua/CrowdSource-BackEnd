@@ -98,6 +98,8 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
   	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="./messenger/js/messenger.min.js"></script>
+    <script src="./messenger/js/messenger-theme-future.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -117,6 +119,7 @@
             var eventType = $('#eventType-box').val();
             var description = $('#description-box').val();
             var eventDate = $('#date-box').val();
+            var user = sessionStorage.getItem('user');
             var myUrl = "http://crowdsourceua.herokuapp.com/addEvent.php?eventName=" + eventName + 
             "&opponent=" + opponent + 
             "&eventLocation=" + eventLocation +
@@ -124,7 +127,8 @@
             "&eventTime=" + eventTime +
             "&eventType=" + eventType +
             "&description=" + description +
-            "&eventDate=" + eventDate + "";
+            "&eventDate=" + eventDate + 
+            "&user=" + user + "";
 
             $.ajax({
               url: myUrl,
