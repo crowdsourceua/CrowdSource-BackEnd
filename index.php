@@ -23,6 +23,4 @@
     }
     
     echo json_encode($eventData);
-    //
-    //mysql_close($conn);
 ?>

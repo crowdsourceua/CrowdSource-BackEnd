@@ -21,11 +21,13 @@
     $num = mysql_num_rows($result);
 
     if($num != 0){
-        $match = { status: true }; 
+        //$match = { status: true }; 
+        echo true;
     }
     else{
-        $match = { status: false };
+        //$match = { status: false };
+        echo false;
     }
     
-    echo json_encode($match);
+    //echo json_encode($match);
 ?>
