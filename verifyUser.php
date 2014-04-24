@@ -27,5 +27,5 @@
         $match = false;
     }
     
-    echo $bool ? 'true' : 'false';
+    echo $match ? 'true' : 'false';
 ?>
