@@ -76,7 +76,7 @@
         </div>
       </div>
     </div>
-    <div id='formDialog' title='Add Event'>
+    <div id='formDialog-event' title='Add Event'>
       <form class="form-addEvent" role="form">
         <h2 class="form-addEvent-heading">Add Event</h2>
         <input id='eventName-box' type="text" class="form-control" placeholder="Event Name" required autofocus>
@@ -87,7 +87,21 @@
         <input id='eventType-box' type="text" class="form-control" placeholder="Event Type" required>
         <input id='description-box' type="text" class="form-control" placeholder="Description" required>
         <input id='date-box' type="text" class="form-control" placeholder="Date" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Event</button>
+      </form>
+    </div>
+    <div id='formDialog-question' title='Add Question'>
+      <form class="form-addQuestion" role="form">
+        <h2 class="form-addQuestion-heading">Add Question</h2>
+        <input id='eventId-box' type="text" class="form-control" placeholder="Event Name" required autofocus>
+        <input id='question-box' type="text" class="form-control" placeholder="Opponent" required>
+        <input id='questionType-box' type="text" class="form-control" placeholder="Location" required>
+        <input id='choiceA-box' type="text" class="form-control" placeholder="Event Venue" required>
+        <input id='choiceB-box' type="text" class="form-control" placeholder="Event Time" required>
+        <input id='choiceC-box' type="text" class="form-control" placeholder="Event Type" required>
+        <input id='choiceD-box' type="text" class="form-control" placeholder="Description" required>
+        <input id='correctAnswer-box' type="text" class="form-control" placeholder="Date" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Question</button>
       </form>
     </div>
 
@@ -103,12 +117,19 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-          $('#formDialog').dialog({
+          $('#formDialog-event').dialog({
+            modal: true,
+            autoOpen: false
+          });
+          $('#formDialog-question').dialog({
             modal: true,
             autoOpen: false
           });
           $('#addEventBtn').on('click', function() {
-            $('#formDialog').dialog('open');
+            $('#formDialog-event').dialog('open');
+          });
+          $('#addQuestionBtn').on('click', function() {
+            $('#formDialog-question').dialog('open');
           });
           $('.form-addEvent').on('submit', function() {				
             var eventName = $('#eventName-box').val();
@@ -137,8 +158,55 @@
                   window.location.replace("./portal.html");
                 }
                 if (data == '0') {
-                  $('#formDialog input').val('');
-                  $('#formDialog').dialog('close');
+                  $('#formDialog-event input').val('');
+                  $('#formDialog-event').dialog('close');
+                  Messenger().post({
+                    message: 'Entries rejected. Please try again.',
+                    type: 'error',
+                    showCloseButton: true
+                  });
+                }
+              },
+              error: function(xhr, textStatus, errorThrown) {
+                Messenger().post({
+                  message: 'There was a network error.  Please try again.',
+                  type: 'error',
+                  showCloseButton: true
+                });
+              }
+            });
+
+            return false;
+          });
+          $('.form-addEvent').on('submit', function() {				
+            var eventId = $('#eventId-box').val();
+            var question = $('#question-box').val();
+            var questionType = $('#questionType-box').val();
+            var choiceA = $('#choiceA-box').val();
+            var choiceB = $('#choiceB-box').val();
+            var choiceC = $('#choiceC-box').val();
+            var choiceD = $('#choiceD-box').val();
+            var correctAnswer = $('#correctanswer-box').val();
+            var user = sessionStorage.getItem('user');
+            var myUrl = "http://crowdsourceua.herokuapp.com/addEvent.pht?eventId=" + eventId + 
+            "&question=" + question + 
+            "&questionType=" + questionType +
+            "&choiceA=" + choiceA +
+            "&choiceB=" + choiceB +
+            "&choiceC=" + choiceC +
+            "&choiceD=" + choiceD +
+            "&correctAnswer=" + correctAnswer + 
+            "&user=" + user + "";
+
+            $.ajax({
+              url: myUrl,
+              success: function(data) {
+                if (data == '1') {
+                  window.location.replace("./portal.html");
+                }
+                if (data == '0') {
+                  $('#formDialog-question input').val('');
+                  $('#formDialog-question').dialog('close');
                   Messenger().post({
                     message: 'Entries rejected. Please try again.',
                     type: 'error',
